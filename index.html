@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color"
+          content="#02040a">
+
+    <title>YASIN SYSTEM</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-logo">Y</div>
+
+        <div>
+            <h1>YASIN SYSTEM</h1>
+            <span>PERSONAL EVOLUTION SYSTEM</span>
+        </div>
+    </div>
+
+    <div class="system-online">
+        <span></span>
+        SYSTEM ONLINE
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- PLAYER -->
+
+    <section class="player-panel">
+
+        <div class="player-info">
+
+            <div class="avatar">Y</div>
+
+            <div>
+                <small>PLAYER</small>
+
+                <h2>YASIN</h2>
+
+                <strong id="rankText">
+                    E-RANK
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="xp-section">
+
+            <div class="xp-header">
+
+                <span>
+                    LEVEL
+                    <b id="levelText">1</b>
+                </span>
+
+                <span>
+                    <b id="xpText">0</b>
+                    /
+                    <b id="requiredXpText">500</b>
+                    XP
+                </span>
+
+            </div>
+
+            <div class="xp-bar">
+                <div id="xpFill"></div>
+            </div>
+
+            <div class="xp-footer">
+
+                <span>NEXT RANK</span>
+
+                <b id="nextRankText">D</b>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <span>⚡ ENERGY</span>
+            <strong id="energyText">100</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>🔥 STREAK</span>
+            <strong id="streakText">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>🌅 ACTIVE DAYS</span>
+            <strong id="activeDaysText">0</strong>
+        </div>
+
+        <div class="stat-card">
+            <span>💰 GOLD</span>
+            <strong id="goldText">0</strong>
+        </div>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="tabs">
+
+        <button class="tab active"
+                data-tab="dashboard">
+            ⚔ DASHBOARD
+        </button>
+
+        <button class="tab"
+                data-tab="account">
+            👤 MY ACCOUNT
+        </button>
+
+        <button class="tab"
+                data-tab="skills">
+            🧠 SKILLS
+        </button>
+
+        <button class="tab"
+                data-tab="goals">
+            🎯 GOALS
+        </button>
+
+        <button class="tab"
+                data-tab="history">
+            📜 HISTORY
+        </button>
+
+    </nav>
+
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard"
+             class="tab-content active">
+
+
+        <!-- DAILY CHALLENGES -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>DAILY SYSTEM</small>
+
+                    <h2>
+                        DAILY CHALLENGES
+                    </h2>
+
+                    <p>
+                        دقیقاً ۴ مأموریت تصادفی برای امروز
+                    </p>
+                </div>
+
+                <div class="timer-box">
+
+                    <small>RESET</small>
+
+                    <strong id="dailyTimer">
+                        00:00:00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div id="dailyTasks"
+                 class="task-grid">
+            </div>
+
+        </section>
+
+
+        <!-- 12H QUESTS -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>TIME LIMITED</small>
+
+                    <h2>
+                        12H QUESTS
+                    </h2>
+
+                    <p>
+                        هر ۱۲ ساعت کاملاً تصادفی می‌شوند
+                    </p>
+                </div>
+
+                <div class="timer-box">
+
+                    <small>RESET</small>
+
+                    <strong id="questTimer">
+                        00:00:00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div id="quests"
+                 class="task-grid">
+            </div>
+
+        </section>
+
+
+        <!-- TRAINING -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>TRAINING</small>
+
+                    <h2>
+                        DAILY TRAINING
+                    </h2>
+
+                    <p>
+                        فعالیت‌های سبک و متناسب با توان
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="training"
+                 class="task-grid">
+            </div>
+
+        </section>
+
+
+        <!-- LEVEL PROGRESSION -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>EVOLUTION</small>
+
+                    <h2>
+                        LEVEL PROGRESSION
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="progression">
+
+                <div class="rank-box">
+
+                    <small>CURRENT</small>
+
+                    <strong id="currentLevel">
+                        1
+                    </strong>
+
+                    <span id="currentRank">
+                        E-RANK
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="rank-box">
+
+                    <small>NEXT</small>
+
+                    <strong id="nextLevel">
+                        2
+                    </strong>
+
+                    <span id="nextRank">
+                        E-RANK
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="next-level-info">
+
+                <span>
+                    XP REQUIRED FOR NEXT LEVEL
+                </span>
+
+                <b id="nextLevelXp">
+                    500
+                </b>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- ACCOUNT -->
+
+    <section id="account"
+             class="tab-content">
+
+
+        <section class="panel account-panel">
+
+            <div class="account-header">
+
+                <div class="big-avatar">
+                    Y
+                </div>
+
+                <div>
+
+                    <small>PLAYER PROFILE</small>
+
+                    <h2>
+                        YASIN
+                    </h2>
+
+                    <strong id="accountRank">
+                        E-RANK
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="account-stats">
+
+                <div>
+                    <span>LEVEL</span>
+                    <b id="accountLevel">1</b>
+                </div>
+
+                <div>
+                    <span>TOTAL XP</span>
+                    <b id="accountXp">0</b>
+                </div>
+
+                <div>
+                    <span>ACTIVE DAYS</span>
+                    <b id="accountDays">0</b>
+                </div>
+
+                <div>
+                    <span>COMPLETED</span>
+                    <b id="accountCompleted">0</b>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RANK JOURNEY -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>RANK JOURNEY</small>
+
+                    <h2>
+                        EVOLUTION PATH
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div id="rankJourney"
+                 class="rank-journey">
+            </div>
+
+        </section>
+
+
+        <!-- TROPHIES -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>ACHIEVEMENTS</small>
+
+                    <h2>
+                        🏆 TROPHIES
+                    </h2>
+
+                    <p>
+                        Trophyهای به‌دست‌آمده در حساب شما ذخیره می‌شوند.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="trophies"
+                 class="trophy-grid">
+            </div>
+
+        </section>
+
+
+        <!-- GUARDIANS -->
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>SYSTEM GUARDIANS</small>
+
+                    <h2>
+                        🛡 GUARDIANS
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div id="guardians"
+                 class="guardian-grid">
+            </div>
+
+        </section>
+
+
+        <!-- GOD PROGRESS -->
+
+        <section class="panel god-panel">
+
+            <div class="god-title">
+
+                <span>👑 FINAL EVOLUTION</span>
+
+                <h2>
+                    PATH TO GOD
+                </h2>
+
+            </div>
+
+
+            <div class="god-requirements">
+
+                <div>
+                    <span>ACTIVE DAYS</span>
+
+                    <strong id="godDays">
+                        0 / 260
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>GOLDEN TROPHY</span>
+
+                    <strong id="godTrophy">
+                        LOCKED
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="god-bar">
+                <div id="godFill"></div>
+            </div>
+
+
+            <p id="godMessage">
+                مسیر GOD هنوز باز نشده است.
+            </p>
+
+        </section>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills"
+             class="tab-content">
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>PLAYER EVOLUTION</small>
+
+                    <h2>
+                        🧠 SKILL TREE
+                    </h2>
+                </div>
+
+                <strong>
+                    SP:
+                    <span id="skillPoints">
+                        0
+                    </span>
+                </strong>
+
+            </div>
+
+
+            <div id="skillsList"
+                 class="skill-grid">
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- GOALS -->
+
+    <section id="goals"
+             class="tab-content">
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>LONG TERM</small>
+
+                    <h2>
+                        🎯 OBJECTIVES
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="goal-form">
+
+                <input
+                    id="goalInput"
+                    type="text"
+                    placeholder="هدف جدید..."
+                >
+
+                <button id="addGoal">
+                    CREATE
+                </button>
+
+            </div>
+
+
+            <div id="goalsList"
+                 class="goals-list">
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- HISTORY -->
+
+    <section id="history"
+             class="tab-content">
+
+        <section class="panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <small>SYSTEM MEMORY</small>
+
+                    <h2>
+                        📜 SYSTEM LOG
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div id="historyList"
+                 class="history-list">
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+<!-- NOTIFICATION -->
+
+<div id="notification"
+     class="notification">
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
